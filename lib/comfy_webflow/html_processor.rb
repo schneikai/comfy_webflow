@@ -10,7 +10,7 @@ class ComfyWebflow::HtmlProcessor
       # doc.xpath("//*[@#{attribute}]").each do |tag|
       frag.css("[@#{attribute}]").each do |tag|
         url = tag[attribute]
-        if relative?(url) && file?(url) && !html_file?(url)
+        if relative?(url) && file?(url) && !html_file?(url) && !asp_file?(url)
           if css_file?(url) || js_file?(url)
             tag[attribute] = "{{ cms:asset:#{filename(url)} }}"
           else

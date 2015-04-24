@@ -30,6 +30,10 @@ module ComfyWebflow::Tools
     file_extension(url) == 'html' || file_extension(url) == 'htm'
   end
 
+  def asp_file?(url)
+    file_extension(url) == 'asp'
+  end
+
   # Returns just the file name part from the given url. Returns +nil+ if no filename present.
   def filename(url)
     File.basename(URI.parse(url).path).presence

@@ -14,4 +14,4 @@ gemspec
 # gem 'debugger'
 
 # TODO: Needed as long as our version is not on Rubygems!
-gem 'comfortable_mexican_sofa', path: '../comfortable-mexican-sofa2'
+gem 'comfortable_mexican_sofa', path: '../comfortable-mexican-sofa'

@@ -21,4 +21,13 @@ class HtmlProcessorTest < ActiveSupport::TestCase
       ComfyWebflow::HtmlProcessor.assets_to_tags('<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js">')
   end
 
+  test 'it should not change asset urls for html or asp pages' do
+    assert_match '<a href="/foo/bar/baz.html">',
+      ComfyWebflow::HtmlProcessor.assets_to_tags('<a href="/foo/bar/baz.html">')
+
+    assert_match '<a href="/foo/bar/baz.asp">',
+      ComfyWebflow::HtmlProcessor.assets_to_tags('<a href="/foo/bar/baz.asp">')
+  end
+
+
 end

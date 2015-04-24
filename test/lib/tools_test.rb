@@ -31,6 +31,11 @@ class ToolsTest < ActiveSupport::TestCase
     assert_not @tools.html_file?("foo/bar/baz.jpg")
   end
 
+  test 'it should identify asp files' do
+    assert @tools.asp_file?("foo/bar/baz.asp")
+    assert_not @tools.asp_file?("foo/bar/baz.jpg")
+  end
+
   test 'it should returns filename from url' do
     assert_equal 'baz.html', @tools.filename("foo/bar/baz.html")
   end
